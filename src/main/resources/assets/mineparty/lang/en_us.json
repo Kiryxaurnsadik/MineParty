@@ -1,0 +1,9 @@
+{
+  "key.categories.mineparty": "MineParty",
+  "key.mineparty.open": "Open party menu",
+  "key.mineparty.invite_mode": "Toggle invite mode",
+  "key.mineparty.radial": "Ping wheel",
+  "key.mineparty.chat_mode": "Toggle party chat",
+  "key.mineparty.cycle_party": "Switch active party",
+  "key.mineparty.hud_editor": "Edit party HUD"
+}

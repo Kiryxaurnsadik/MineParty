@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "mineparty",
+  "version": "${version}",
+  "name": "MineParty",
+  "description": "Parties (squads) with markers through walls, pings, a party HUD and party chat.",
+  "authors": ["Kiryxaurnsadik"],
+  "contact": {
+    "sources": "https://github.com/Kiryxaurnsadik/MineParty"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["io.github.kiryxaurnsadik.mineparty.MineParty"],
+    "client": ["io.github.kiryxaurnsadik.mineparty.client.MinePartyClient"]
+  },
+  "mixins": [
+    {
+      "config": "mineparty.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "~${minecraft_version}",
+    "java": ">=21"
+  }
+}

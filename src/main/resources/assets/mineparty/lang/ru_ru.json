@@ -1,0 +1,9 @@
+{
+  "key.categories.mineparty": "MineParty",
+  "key.mineparty.open": "Меню отряда",
+  "key.mineparty.invite_mode": "Режим приглашения",
+  "key.mineparty.radial": "Колесо пингов",
+  "key.mineparty.chat_mode": "Чат отряда вкл/выкл",
+  "key.mineparty.cycle_party": "Сменить активный отряд",
+  "key.mineparty.hud_editor": "Настроить HUD отряда"
+}
