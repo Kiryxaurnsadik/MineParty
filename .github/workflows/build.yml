@@ -19,6 +19,13 @@ jobs:
         run: |
           echo "Latest loaders:"; curl -s https://meta.fabricmc.net/v2/versions/loader | jq -r '.[0:3][].version'
           echo "Fabric API for 1.21.1:"; curl -s 'https://api.modrinth.com/v2/project/fabric-api/version?game_versions=%5B%221.21.1%22%5D' | jq -r '.[0:3][].version_number'
+      - name: Download Gradle (retry on network errors)
+        run: |
+          for i in 1 2 3 4 5; do
+            ./gradlew --version && exit 0
+            echo "Gradle download failed, retry $i"; sleep $((i * 10))
+          done
+          exit 1
       - name: Build
         run: ./gradlew build --stacktrace
       - uses: actions/upload-artifact@v4
