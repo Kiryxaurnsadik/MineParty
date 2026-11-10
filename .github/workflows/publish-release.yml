@@ -1,0 +1,31 @@
+name: Publish release
+on:
+  push:
+    branches: [claude/project-thread-ez6inw]
+    paths: ['release/**', '.github/workflows/publish-release.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: MineParty 0.6.0
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v0.6.0
+          name: MineParty 0.6.0 (Fabric 1.21.1 / 1.21.11)
+          target_commitish: ${{ github.sha }}
+          body_path: release/general/NOTES.md
+          make_latest: false
+          files: release/general/*.jar
+      - name: MineParty AtlantWorld 0.6.2
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v0.6.2-atlantworld
+          name: MineParty AtlantWorld Edition 0.6.2 (Fabric 1.21.1 / 1.21.11)
+          target_commitish: ${{ github.sha }}
+          body_path: release/atlantworld/NOTES.md
+          make_latest: true
+          files: release/atlantworld/*.jar
