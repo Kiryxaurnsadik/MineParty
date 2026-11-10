@@ -1,2 +1,2 @@
 # MineParty
-Test Mod
+Test Mod Minecraft with groups
